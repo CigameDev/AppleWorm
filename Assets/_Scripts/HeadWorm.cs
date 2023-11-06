@@ -22,24 +22,39 @@ public class HeadWorm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            this.transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            if(!CanMove(Vector2.right))
+            {
+                return;
+            }    
             worm.Move();
-
+            this.transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            if (!CanMove(Vector2.left))
+            {
+                return;
+            }
             worm.Move();
+            this.transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            this.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            if (!CanMove(Vector2.up))
+            {
+                return;
+            }
             worm.Move();
+            this.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            this.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            if (!CanMove(Vector2.down))
+            {
+                return;
+            }
             worm.Move();
+            this.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,7 +69,6 @@ public class HeadWorm : MonoBehaviour
             worm.AddSegmentWorm(segment);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("DeadZone"))
@@ -62,4 +76,14 @@ public class HeadWorm : MonoBehaviour
             Debug.Log("GameOver");
         }
     }
+    private bool CanMove(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction,1f);
+        if(hit.collider != null)
+        {
+            Debug.Log("Khong the di chuyen "+hit.collider.gameObject.name);
+            return false;
+        }    
+        return true;
+    }    
 }
