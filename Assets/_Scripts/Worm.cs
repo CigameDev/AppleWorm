@@ -8,7 +8,8 @@ public class Worm : MonoBehaviour
 
     public void AddSegmentWorm(GameObject segment)
     {
-        segmentWorms.Add(segment);
+        //segmentWorms.Add(segment);
+        segmentWorms.Insert(1, segment);
     }    
     public void Move()
     {
@@ -17,4 +18,13 @@ public class Worm : MonoBehaviour
             segmentWorms[i].transform.position = segmentWorms[i-1].transform.position;
         }
     }
+
+    public void WormFall(bool isFall)
+    {
+        for(int i =0;i < segmentWorms.Count;i++)
+        {
+            Rigidbody2D rb = segmentWorms[i].GetComponent<Rigidbody2D>();
+            rb.isKinematic = isFall;
+        }
+    }    
 }

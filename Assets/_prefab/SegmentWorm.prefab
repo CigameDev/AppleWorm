@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4232132373376527089}
   - component: {fileID: 4232132373376527092}
   - component: {fileID: 4232132373376527091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SegmentWorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
