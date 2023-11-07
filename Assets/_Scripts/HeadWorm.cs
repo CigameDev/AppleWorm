@@ -134,7 +134,6 @@ public class HeadWorm : MonoBehaviour
         segment.transform.position = transform.position;
         transform.position = new Vector3(transform.position.x + direction.x, transform.position.y + direction.y, transform.position.z);
         worm.AddSegmentWorm(segment);
-        
     }
 
     private bool CheckLose()

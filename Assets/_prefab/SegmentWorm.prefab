@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4232132373376527088}
   - component: {fileID: 4232132373376527089}
   - component: {fileID: 4232132373376527092}
-  - component: {fileID: 4232132373376527091}
+  - component: {fileID: 8525525410313414334}
   m_Layer: 7
   m_Name: SegmentWorm
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4232132373376526991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.27, y: -2.8, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &4232132373376527091
+--- !u!61 &8525525410313414334
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,12 +124,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.38, y: 2.39}
+    oldSize: {x: 1, y: 1.0042017}
     newSize: {x: 2.38, y: 2.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.38, y: 2.39}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0

@@ -8,7 +8,6 @@ public class Worm : MonoBehaviour
 
     public void AddSegmentWorm(GameObject segment)
     {
-        //segmentWorms.Add(segment);
         segmentWorms.Insert(1, segment);
     }    
     public void Move()
